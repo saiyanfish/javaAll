@@ -17,7 +17,8 @@ public class ii71 {
 			conn.connect();
 			FileOutputStream fout =new FileOutputStream("dir1/iii.jpg");
 			BufferedInputStream bin =new BufferedInputStream(conn.getInputStream());
-			byte [] buf =new byte [4*1024];int len;
+			int aa =conn.getContentLength();
+			byte [] buf =new byte [aa];int len;
 			while((len=bin.read(buf))!=-1) {
 				fout.write(buf,0,len);
 			}
