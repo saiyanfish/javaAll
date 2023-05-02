@@ -85,7 +85,7 @@ public class MyDrawer2 extends JPanel {
 	}
 	public boolean loadLines(String filename) {
 		try (ObjectInputStream ooin =new ObjectInputStream(new FileInputStream(filename))){
-			lines=(LinkedList<Line>)ooin.readObject();
+			lines=(LinkedList<Line>) ooin.readObject();
 			repaint();
 			recycleBin.clear();
 			return true;
@@ -100,7 +100,7 @@ public class MyDrawer2 extends JPanel {
 		paint(g2d);
 		
 		try {
-			ImageIO.write(img, "jpeg", new File("dir1/lines.jpg"));
+			ImageIO.write(img, "jpeg", new File("dir1/liness.jpg"));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
