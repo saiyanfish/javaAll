@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import tw.org.iii.myclasses.MyClock;
 import tw.org.iii.myclasses.MyDrawer;
 import tw.org.iii.myclasses.MyDrawer2;
 import tw.org.iii.myclasses.MyDrawer3;
@@ -27,6 +28,7 @@ public class MySign extends JFrame {
 	private JButton clear, undo, redo,chColor,chStroke;
 	private JTextField stroke;
 	private JButton save,load,savejpg;
+	private MyClock myclock;
 	public MySign() {
 		super("Sign");
 
@@ -44,7 +46,7 @@ public class MySign extends JFrame {
 		save =new JButton("Save obj");
 		load =new JButton("Load obj");
 		savejpg=new JButton("save jpeg");
-		
+		myclock =new MyClock();
 		JPanel top = new JPanel(new FlowLayout());
 		top.add(clear);
 		top.add(undo);
@@ -55,7 +57,7 @@ public class MySign extends JFrame {
 		top.add(chStroke);
 		top.add(stroke);
 		top.add(savejpg);
-		
+		top.add(myclock);
 		add(top, BorderLayout.NORTH);
 
 		clear.addActionListener(new ActionListener() {		
@@ -106,7 +108,7 @@ public class MySign extends JFrame {
 				myDrawer.saveJPEG();
 			}
 		});
-		setSize(800, 640);
+		setSize(1024, 768);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}

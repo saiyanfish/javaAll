@@ -21,7 +21,7 @@ public class ii68 {
 			BufferedOutputStream bout = 
 				new BufferedOutputStream(
 					new FileOutputStream(
-						String.format("dir2/%s.jpg", hostname)));
+						String.format("dir2/%s.png", hostname)));
 			
 			while ( (len = bin.read(buf)) != -1) {
 				bout.write(buf, 0, len);

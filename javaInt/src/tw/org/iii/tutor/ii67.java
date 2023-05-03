@@ -13,14 +13,14 @@ public class ii67 {
 
 	public static void main(String[] args) {
 		try {
-			File source =new File("dir1/22.gif");
+			File source =new File("dir1/ball.png");
 			BufferedInputStream bin =new BufferedInputStream(new FileInputStream(source));
 			byte[] buf =new byte[(int)source.length()];
 			bin.read(buf);
 			bin.close();
 			System.out.println("rd ok");
 			
-			Socket socket =new Socket(InetAddress.getByName("192.168.0.38"), 9999);
+			Socket socket =new Socket(InetAddress.getByName("10.0.104.190"), 9999);
 			BufferedOutputStream bout =new BufferedOutputStream(socket.getOutputStream());
 			bout.write(buf);
 			bout.flush();
