@@ -13,7 +13,8 @@ public class Clock extends JPanel{
 	public int secs;
 	public int min;
 	public int hr;
-	private int r =100;
+	private int startr =100;
+	
 	public Clock(){
 
 		setBackground(Color.black);
@@ -39,14 +40,14 @@ public class Clock extends JPanel{
 		Graphics2D g2d=(Graphics2D)g;
 		g2d.setStroke(new BasicStroke(3));
 		g2d.setColor(Color.blue);
-		g2d.drawOval(r, r, 100, 100);
+		g2d.drawOval(startr, startr, 100, 100);
 		
 		g2d.setColor(Color.WHITE);
-		g2d.drawLine(r+50, r+50, (int)(r+50+48*cos),(int)(r+50+48*sin));
+		g2d.drawLine(startr+50, startr+50, (int)(startr+50+48*cos),(int)(startr+50+48*sin));
 		g2d.setColor(Color.CYAN);
-		g2d.drawLine(r+50, r+50, (int)(r+50+40*mincos),(int)(r+50+40*minsin));
+		g2d.drawLine(startr+50, startr+50, (int)(startr+50+40*mincos),(int)(startr+50+40*minsin));
 		g2d.setColor(Color.red);
-		g2d.drawLine(r+50, r+50, (int)(r+50+30*hrcos),(int)(r+50+30*hrsin));
+		g2d.drawLine(startr+50, startr+50, (int)(startr+50+30*hrcos),(int)(startr+50+30*hrsin));
 	
 	}
 	
