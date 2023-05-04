@@ -50,16 +50,27 @@ public class Clock extends JPanel{
 		g2d.drawLine(startr+r, startr+r, (int)(startr+r+40*mincos),(int)(startr+r+40*minsin));
 		g2d.setColor(Color.red);
 		g2d.drawLine(startr+r, startr+r, (int)(startr+r+30*hrcos),(int)(startr+r+30*hrsin));
-		for(int a=1;a<13;a++) {
+		for(int a=1;a<10;a++) {
 			g2d.setStroke(new BasicStroke(2));
-
+			g2d.setColor(Color.white);
 			double strdegrees = (a*30-90);
 			double strradians = Math.toRadians(strdegrees); 
 			double strsin=Math.sin(strradians);
 			double strcos= Math.cos(strradians);
 			String astr=Integer.toString(a);
 			
-			g2d.drawString(astr, (int)(startr+r+50*strcos-5),(int)(startr+r+50*strsin)+5);
+			g2d.drawString(astr, (int)(startr+r+46*strcos-4),(int)(startr+r+46*strsin)+4);
+		}
+		for(int a=10;a<13;a++) {
+			g2d.setStroke(new BasicStroke(2));
+			g2d.setColor(Color.white);
+			double strdegrees = (a*30-90);
+			double strradians = Math.toRadians(strdegrees); 
+			double strsin=Math.sin(strradians);
+			double strcos= Math.cos(strradians);
+			String astr=Integer.toString(a);
+			
+			g2d.drawString(astr, (int)(startr+r+46*strcos-7),(int)(startr+r+46*strsin)+6);
 		}
 	}
 	

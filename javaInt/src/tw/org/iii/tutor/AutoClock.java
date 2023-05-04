@@ -32,7 +32,7 @@ public class AutoClock extends JFrame{
 	
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1000, 1000);
+		setSize(400, 400);
 	
 	}
 	
