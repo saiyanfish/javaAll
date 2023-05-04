@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,20 +18,26 @@ import javax.swing.JPanel;
 public class MyPanel extends JPanel {
 	private BufferedImage ball;
 	private Timer timer;
-	private int ballX, ballY, viewX, viewY,dx,dy;
-
+	private BufferedImage[] imgs; 
+	private int  viewX, viewY;
+	private LinkedList<BallTask> balls;
+	
 	public MyPanel() {
 		setBackground(Color.yellow);
 
 		try {
-			ball = ImageIO.read(new File("dir1/ball.png"));
+			imgs =new BufferedImage[4];
+			imgs[0] = ImageIO.read(new File("dir1/ball1.png"));			
+			imgs[1] = ImageIO.read(new File("dir1/ball2.png"));
+			imgs[2] = ImageIO.read(new File("dir1/ball1.png"));
+			imgs[3] = ImageIO.read(new File("dir1/ball2.png"));
+
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
-		ballX = ballY = 90;
-		dx=dy=2;
+		
+		balls =new LinkedList<>();
 		timer = new Timer();
-		timer.schedule(new BallTask(), 1000, 20);
+		timer.schedule(new RefreshView(), 0, 16);
 		addMouseListener(new MymouseListener());
 	}
 
@@ -40,28 +47,49 @@ public class MyPanel extends JPanel {
 		viewX = getWidth();
 		viewY = getHeight();
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(ball, ballX, ballY, null);
+		for(BallTask ball:balls) {
+		g2d.drawImage(imgs[ball.img], ball.x, ball.y, null);}
 
 	}
 	private class MymouseListener extends MouseAdapter{
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			if(e.getX()-40>0 &&e.getY()-40>0 
+				&&e.getX()+40<viewX&&e.getY()+40<viewY ) {
+				BallTask ball =new BallTask(e.getX()-40,e.getY()-40);
+				
+				balls.add(ball);
+				timer.schedule(ball, 100,30);	
+			}
 			
 		}
 	}
-
-	private class BallTask extends TimerTask {
+	private class RefreshView extends TimerTask{
 		@Override
 		public void run() {
-			if(ballX<=0 ||ballX+80>=viewX) {
+			repaint();
+		}
+	}
+	private class BallTask extends TimerTask {
+		public int x,y,dx,dy,img;  ///get set
+		public BallTask(int x,int y){
+			this.x =x; this.y=y;
+			for(;dx==0;	dx=(int)((Math.random()*15)-7)) 
+			for(;dy==0; dy=(int)((Math.random()*15)-7))
+			img =(int)(Math.random()*4);
+		}
+		
+		@Override
+		public void run() {
+			if(x<=0 ||x+80>=viewX) {
 				dx*=-1;
 			}
-			if(ballY<=0 ||ballY+80>=viewY) {
+			if(y<=0 ||y+80>=viewY) {
 				dy*=-1;
 			}
-			ballX += dx;
-			ballY += dy;
-			repaint();
+			x += dx;
+			y += dy;
+			
 		}
 
 	}

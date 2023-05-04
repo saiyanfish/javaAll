@@ -11,7 +11,7 @@ public class ii66 {
 
 	public static void main(String[] args) {
 		try {
-			Socket socket =new Socket(InetAddress.getByName("10.0.104.120"),9957);
+			Socket socket =new Socket(InetAddress.getByName("192.168.16.139"),9958);
 			OutputStream oout= socket.getOutputStream();
 			OutputStreamWriter ow =new OutputStreamWriter(oout);
 			BufferedWriter bw =new BufferedWriter(ow);
@@ -19,7 +19,7 @@ public class ii66 {
 			bw.flush();
 			bw.close();
 			socket.close();
-			System.out.println("send:ok");
+//			System.out.println("send:ok");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
