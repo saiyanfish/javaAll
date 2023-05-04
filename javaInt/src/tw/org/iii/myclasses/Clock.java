@@ -34,6 +34,8 @@ public class Clock extends JPanel{
 		double hrradians = Math.toRadians(hrdegrees); 
 		double hrsin=Math.sin(hrradians);
 		double hrcos= Math.cos(hrradians);
+		///時鐘數字
+		
 		
 		
 		
@@ -43,12 +45,22 @@ public class Clock extends JPanel{
 		g2d.drawOval(startr, startr, 2*r, 2*r);
 		
 		g2d.setColor(Color.WHITE);
-		g2d.drawLine(startr+r, startr+r, (int)(startr+50+48*cos),(int)(startr+r+48*sin));
+		g2d.drawLine(startr+r, startr+r, (int)(startr+r+48*cos),(int)(startr+r+48*sin));
 		g2d.setColor(Color.CYAN);
-		g2d.drawLine(startr+r, startr+r, (int)(startr+50+40*mincos),(int)(startr+r+40*minsin));
+		g2d.drawLine(startr+r, startr+r, (int)(startr+r+40*mincos),(int)(startr+r+40*minsin));
 		g2d.setColor(Color.red);
-		g2d.drawLine(startr+r, startr+r, (int)(startr+50+30*hrcos),(int)(startr+r+30*hrsin));
-	
+		g2d.drawLine(startr+r, startr+r, (int)(startr+r+30*hrcos),(int)(startr+r+30*hrsin));
+		for(int a=1;a<13;a++) {
+			g2d.setStroke(new BasicStroke(2));
+
+			double strdegrees = (a*30-90);
+			double strradians = Math.toRadians(strdegrees); 
+			double strsin=Math.sin(strradians);
+			double strcos= Math.cos(strradians);
+			String astr=Integer.toString(a);
+			
+			g2d.drawString(astr, (int)(startr+r+50*strcos-5),(int)(startr+r+50*strsin)+5);
+		}
 	}
 	
 		
