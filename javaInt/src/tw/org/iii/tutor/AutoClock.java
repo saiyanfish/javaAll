@@ -22,7 +22,7 @@ public class AutoClock extends JFrame{
 	private JButton bt;
 	AutoClock(){
 		Timer timer =new Timer();
-		timer.schedule(new timertask(), 0, 1000);
+		timer.schedule(new timertask(), 0, 10);
 		clock =new Clock();
 		
 		setLayout(new BorderLayout());
@@ -53,8 +53,10 @@ class timertask extends TimerTask{
 			clock.secs= Integer.parseInt(s);
 			clock.min= Integer.parseInt(m);
 			clock.hr= Integer.parseInt(h);
-//			clock.ms=Integer.parseInt(ms);
-//			System.out.println(clock.secs);
+			clock.ms=Integer.parseInt(ms);
+			clock.inix =getWidth()/2-50;
+			clock.iniy =getHeight()/2-50;
+
 			repaint();
 		}
 		

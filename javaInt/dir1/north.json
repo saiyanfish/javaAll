@@ -1,0 +1,47 @@
+[
+	{
+		"Firstname": "Margaret",
+		"Lasttname": "Peacock",
+		"sum": 250187.45
+	},
+	{
+		"Firstname": "Janet",
+		"Lasttname": "Leverling",
+		"sum": 213051.3
+	},
+	{
+		"Firstname": "Nancy",
+		"Lasttname": "Davolio",
+		"sum": 202143.71
+	},
+	{
+		"Firstname": "Andrew",
+		"Lasttname": "Fuller",
+		"sum": 177749.26
+	},
+	{
+		"Firstname": "Robert",
+		"Lasttname": "King",
+		"sum": 141295.99
+	},
+	{
+		"Firstname": "Laura",
+		"Lasttname": "Callahan",
+		"sum": 133301.03
+	},
+	{
+		"Firstname": "Anne",
+		"Lasttname": "Dodsworth",
+		"sum": 82964
+	},
+	{
+		"Firstname": "Michael",
+		"Lasttname": "Suyama",
+		"sum": 78198.1
+	},
+	{
+		"Firstname": "Steven",
+		"Lasttname": "Buchanan",
+		"sum": 75567.75
+	}
+]
