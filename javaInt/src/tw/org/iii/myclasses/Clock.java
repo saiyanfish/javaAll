@@ -34,7 +34,7 @@ public class Clock extends JPanel{
 		double hrradians = Math.toRadians(hrdegrees); 
 		double hrsin=Math.sin(hrradians);
 		double hrcos= Math.cos(hrradians);
-		///時鐘數字
+		
 		
 		
 		
