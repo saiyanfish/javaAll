@@ -1,5 +1,8 @@
 package tw.org.iii.tutor;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -49,7 +52,20 @@ public class JDBC12 {
 					jws.endObject();
 				}
 				jws.endArray();
-				System.out.println(jws.toString());
+//				System.out.println(jws.toString());
+				FileOutputStream fout =new FileOutputStream(new File("dir1/last.json"));
+				fout.write(jws.toString().getBytes());
+				fout.flush();
+				fout.close();
+				FileInputStream fin =new FileInputStream(new File("dir1/last.json"));
+				byte[] aa =new byte[1024];
+				int len;
+				while((len= fin.read(aa))!=-1) {
+					System.out.println(new String(aa, 0, len));
+				}
+				fin.close();
+				
+				
 			}catch(Exception e) {
 				System.out.println(e);
 			}
