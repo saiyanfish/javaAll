@@ -25,18 +25,17 @@ public class JDBC06 {
 			//select from
 			String sql = "SELECT * FROM food WHERE name LIKE ? OR address LIKE ? OR tel LIKE ?";
 			String var = "%" + key + "%";
-			
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, var);
 			pstmt.setString(2, var);
 			pstmt.setString(3, var);
 			ResultSet result = pstmt.executeQuery();
-			
 			while (result.next()) {
 				String name = result.getString("name");
 				String address = result.getString("address");
 				String tel = result.getString("tel");
 				System.out.printf("%s:%s:%s\n", name, address, tel);
+
 			}
 			
 			result.close();

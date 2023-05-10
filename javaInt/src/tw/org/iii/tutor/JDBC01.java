@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.mysql.cj.jdbc.Driver;
+
 public class JDBC01 {
 
 	public static void main(String[] args) {
@@ -27,6 +29,7 @@ public class JDBC01 {
 			}
 			;
 			int count = stmt.executeUpdate(sql);
+			
 			System.out.println(count);
 			
 			System.out.println("mysql:iii");

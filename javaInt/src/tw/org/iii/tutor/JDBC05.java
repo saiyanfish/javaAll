@@ -32,7 +32,6 @@ public class JDBC05 {
 		URL url = new URL("https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
-		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 		String line;
 		StringBuffer sb = new StringBuffer();
@@ -67,12 +66,12 @@ public class JDBC05 {
 			try {
 				pstmt.setDouble(5, Double.parseDouble(row.getString("Latitude")));
 			} catch (Exception e) {
-				pstmt.setDouble(5, 0);
+				pstmt.setDouble(5, 0.0);
 			}
 			try {
 				pstmt.setDouble(6, Double.parseDouble(row.getString("Longitude")));
 			} catch (Exception e) {
-				pstmt.setDouble(6, 0);
+				pstmt.setDouble(6, 0.0);
 			}
 			pstmt.executeUpdate();
 		}

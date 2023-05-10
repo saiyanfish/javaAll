@@ -29,6 +29,7 @@ import java.util.Properties;
 					int len =in.read(buf);
 //					fout.write(len);
 					fout.write(buf, 0, len);
+					
 					fout.flush();
 					fout.close();
 					System.out.println("ok");

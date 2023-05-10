@@ -13,16 +13,12 @@ public class JDBC04 {
 		
 		try {
 			Properties prop =new Properties();
-			prop.put("user", "root");
-			prop.put("password", "root");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:8889/iii",prop);
+			prop.put("user", "root");prop.put("password", "root");
 			String sql="insert into cust (cname,tel,birthday) values(?,?,?)";
-			PreparedStatement pstmt =conn.prepareStatement(sql);
-			pstmt.setString(1, "brad");
-			pstmt.setString(2, "345");
-			pstmt.setString(3, "1998-09-02");
-			pstmt.executeUpdate();
-			
+			Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:8889/iii", prop);
+			PreparedStatement ps= conn.prepareStatement(sql);
+			ps.setString(1, "brad");ps.setString(2, "077777777");ps.setString(3, "1998-01-01");
+			ps.executeUpdate();
 			
 		} catch (SQLException e) {
 			System.out.println(e);
