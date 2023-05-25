@@ -31,7 +31,6 @@ public class MyDrawer2 extends JPanel {
 		nowColor = Color.BLUE;
 		lines = new LinkedList<>();
 		recycleBin = new LinkedList<>();
-
 		MyListener myListener = new MyListener();
 		addMouseListener(myListener);
 		addMouseMotionListener(myListener);

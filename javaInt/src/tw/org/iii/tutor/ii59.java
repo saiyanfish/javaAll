@@ -16,7 +16,7 @@ public class ii59 {
 		System.out.println("平均：" + s2.avg());
 		try {
 			FileOutputStream fout = new FileOutputStream("dir1/s1");
-			ObjectOutputStream oout = new ObjectOutputStream(fout);
+			ObjectOutputStream oout = new ObjectOutputStream(fout);			
 			oout.writeObject(s1);
 			oout.writeObject(s2);
 			oout.flush();

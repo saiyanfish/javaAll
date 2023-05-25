@@ -3,6 +3,7 @@ package tw.org.iii.tutor;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
+import java.util.LinkedList;
 
 public class ii64 {
 
@@ -16,6 +17,7 @@ public class ii64 {
 			int len =packet.getLength();
 			String message =new String(data,0,len);
 			System.out.println(urip+":"+message);
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}

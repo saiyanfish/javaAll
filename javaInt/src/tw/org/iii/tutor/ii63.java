@@ -3,6 +3,7 @@ package tw.org.iii.tutor;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.LinkedList;
 
 public class ii63 {
 
@@ -18,6 +19,7 @@ public class ii63 {
 			System.out.println("ok");
 		} catch (Exception e) {
 			System.out.println(e);
+			
 		}
 	}
 }
